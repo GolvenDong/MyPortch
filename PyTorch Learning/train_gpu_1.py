@@ -43,8 +43,8 @@ class Tudui(nn.Module):
         x = self.model(x)
         return x
 tudui = Tudui()
-# if torch.cuda.is_available():
-tudui = tudui.cuda()
+if torch.cuda.is_available():
+    tudui = tudui.cuda()
 
 # 损失函数
 loss_fn = nn.CrossEntropyLoss()
